@@ -1,0 +1,236 @@
+{
+  "mastitis": {
+    "display_name": "Mastitis",
+    "cause": "Bacterial infection of the udder (commonly Staphylococcus, Streptococcus, or E. coli), usually entering through the teat canal.",
+    "symptoms": "Swollen, hot, painful udder; clots or watery/discolored milk; reduced milk yield; fever in severe cases.",
+    "treatment": "Intramammary or systemic antibiotics as prescribed by a vet, frequent milking-out of the affected quarter, anti-inflammatories for pain.",
+    "prevention": "Proper milking hygiene, teat dipping/disinfection, clean bedding, and regular udder health checks.",
+    "contagious": true,
+    "severity": "moderate-high"
+  },
+  "blackleg": {
+    "display_name": "Blackleg",
+    "cause": "Infection with Clostridium chauvoei spores, often activated after bruising or muscle injury.",
+    "symptoms": "Sudden severe lameness, hot painful swelling in muscle (later cold and gas-filled/crackling), high fever, depression, rapid death.",
+    "treatment": "High-dose antibiotics (e.g. penicillin) if caught extremely early, but progression is often fast and fatal; supportive care from a vet.",
+    "prevention": "Annual clostridial (blackleg) vaccination of young cattle, especially in endemic pastures.",
+    "contagious": false,
+    "severity": "high"
+  },
+  "bloat": {
+    "display_name": "Bloat",
+    "cause": "Excess gas trapped in the rumen, either frothy (from legume-rich pasture) or free-gas (from obstruction).",
+    "symptoms": "Distended left side of abdomen, visible discomfort, rapid breathing, kicking at belly, collapse in severe cases.",
+    "treatment": "Emergency gas relief via stomach tube or trocar, anti-foaming agents (e.g. poloxalene) for frothy bloat; veterinary emergency if severe.",
+    "prevention": "Gradual introduction to lush legume pasture, feeding bloat-preventing supplements, providing adequate roughage.",
+    "contagious": false,
+    "severity": "high"
+  },
+  "coccidiosis": {
+    "display_name": "Coccidiosis",
+    "cause": "Intestinal infection with Eimeria protozoan parasites, spread through contaminated feed, water, or bedding.",
+    "symptoms": "Watery to bloody diarrhea, straining, dehydration, weight loss, poor growth, especially in young calves.",
+    "treatment": "Anticoccidial drugs (e.g. amprolium or sulfa drugs), fluid and electrolyte support for dehydration.",
+    "prevention": "Clean, dry housing, avoiding overcrowding, coccidiostats in feed for calves, good sanitation of water troughs.",
+    "contagious": true,
+    "severity": "moderate"
+  },
+  "cryptosporidiosis": {
+    "display_name": "Cryptosporidiosis",
+    "cause": "Infection with Cryptosporidium parvum protozoan parasite, typically affecting young calves via contaminated environment.",
+    "symptoms": "Profuse watery diarrhea, dehydration, weight loss, lethargy in calves usually under 3 weeks old.",
+    "treatment": "Supportive fluid/electrolyte therapy; no fully curative drug, halofuginone may reduce severity if used early.",
+    "prevention": "Colostrum management, strict hygiene in calving/calf-rearing areas, isolate scouring calves.",
+    "contagious": true,
+    "severity": "moderate"
+  },
+  "displaced_abomasum": {
+    "display_name": "Displaced Abomasum",
+    "cause": "The abomasum (true stomach) fills with gas and shifts out of position, usually left side, common after calving.",
+    "symptoms": "Reduced appetite, drop in milk production, mild colic, ketotic breath odor, a characteristic 'ping' sound on abdomen when tapped.",
+    "treatment": "Surgical correction (most common) or non-surgical rolling/repositioning by a vet, followed by dietary management.",
+    "prevention": "Proper transition-period nutrition, avoiding excess concentrate/low fiber diets around calving, managing body condition.",
+    "contagious": false,
+    "severity": "moderate-high"
+  },
+  "gut_worms": {
+    "display_name": "Gut Worms (Gastrointestinal Parasites)",
+    "cause": "Internal parasitic worms (e.g. Ostertagia, Cooperia) picked up from contaminated pasture.",
+    "symptoms": "Weight loss, diarrhea, poor coat condition, reduced growth or milk yield, sometimes bottle jaw (swelling under jaw).",
+    "treatment": "Anthelmintic (deworming) drugs as advised by a vet, targeted to the specific worm burden.",
+    "prevention": "Rotational grazing, pasture rest periods, regular fecal egg counts, strategic deworming programs.",
+    "contagious": false,
+    "severity": "low-moderate"
+  },
+  "listeriosis": {
+    "display_name": "Listeriosis",
+    "cause": "Infection with Listeria monocytogenes bacteria, often from spoiled silage.",
+    "symptoms": "Circling, head tilt, facial nerve paralysis (drooping ear/lip), loss of balance, fever, possible abortion in pregnant cows.",
+    "treatment": "High-dose antibiotics (e.g. penicillin) early in disease course, supportive nursing care and fluids.",
+    "prevention": "Feed good-quality silage, discard moldy/spoiled feed, proper silage fermentation and storage practices.",
+    "contagious": false,
+    "severity": "high"
+  },
+  "liver_fluke": {
+    "display_name": "Liver Fluke",
+    "cause": "Infestation with Fasciola hepatica parasite, transmitted via snails in wet pasture areas.",
+    "symptoms": "Weight loss, anemia (pale gums), bottle jaw, reduced milk yield, chronic ill-thrift; acute form can cause sudden death.",
+    "treatment": "Flukicide drugs (e.g. triclabendazole) prescribed by a vet, timed to the fluke life cycle.",
+    "prevention": "Avoid grazing wet/marshy pastures, snail habitat control, strategic flukicide dosing programs.",
+    "contagious": false,
+    "severity": "moderate-high"
+  },
+  "necrotic_enteritis": {
+    "display_name": "Necrotic Enteritis",
+    "cause": "Overgrowth of Clostridium perfringens bacteria in the intestine, often triggered by diet change or intestinal damage.",
+    "symptoms": "Sudden severe diarrhea (sometimes bloody), abdominal pain, depression, rapid dehydration, can progress quickly to death.",
+    "treatment": "Emergency veterinary care with antibiotics, fluid therapy, and anti-inflammatory support.",
+    "prevention": "Gradual diet transitions, clostridial vaccination where available, good gut health management.",
+    "contagious": false,
+    "severity": "high"
+  },
+  "peri_weaning_diarrhoea": {
+    "display_name": "Peri-Weaning Diarrhoea",
+    "cause": "Multifactorial gut upset (dietary transition, viral/bacterial/parasitic triggers) occurring around the weaning period.",
+    "symptoms": "Diarrhea, reduced appetite, weight loss or poor growth around the time of weaning.",
+    "treatment": "Fluid and electrolyte support, identify and treat underlying infectious cause if present, dietary adjustment.",
+    "prevention": "Gradual weaning process, consistent nutrition, minimizing stress and overcrowding at weaning.",
+    "contagious": false,
+    "severity": "low-moderate"
+  },
+  "rift_valley_fever": {
+    "display_name": "Rift Valley Fever",
+    "cause": "Viral disease (Phlebovirus) spread by mosquitoes, notifiable and zoonotic (can infect humans).",
+    "symptoms": "Fever, weakness, high abortion rates in pregnant animals, high mortality in young calves, sudden death.",
+    "treatment": "No specific antiviral treatment; supportive care only. This is a notifiable disease — report to veterinary authorities immediately.",
+    "prevention": "Vaccination in endemic regions, mosquito control, restricting animal movement during outbreaks.",
+    "contagious": true,
+    "severity": "high"
+  },
+  "rumen_acidosis": {
+    "display_name": "Rumen Acidosis",
+    "cause": "Excess rapidly fermentable carbohydrate (grain) intake causing rumen pH to drop sharply.",
+    "symptoms": "Reduced appetite, diarrhea, dullness, teeth grinding, in severe cases staggering and collapse.",
+    "treatment": "Rumen buffers (e.g. sodium bicarbonate), fluid therapy, in severe cases rumen lavage by a vet.",
+    "prevention": "Gradual grain introduction, balanced diet with adequate fiber, avoiding sudden feed changes.",
+    "contagious": false,
+    "severity": "moderate"
+  },
+  "traumatic_reticulitis": {
+    "display_name": "Traumatic Reticulitis (Hardware Disease)",
+    "cause": "Ingestion of sharp metal objects (wire, nails) that penetrate the reticulum wall.",
+    "symptoms": "Reluctance to move, arched back, grunting, reduced appetite, drop in milk yield, pain on pressure over the chest/abdomen.",
+    "treatment": "Magnet administration to trap metal, antibiotics for infection, surgical removal in severe cases.",
+    "prevention": "Use of rumen magnets, keeping pasture and feed areas free of metal debris, magnetic sweeping of fields.",
+    "contagious": false,
+    "severity": "moderate-high"
+  },
+  "calf_diphtheria": {
+    "display_name": "Calf Diphtheria",
+    "cause": "Bacterial infection (Fusobacterium necrophorum) of the mouth/throat, often via injury to oral tissue.",
+    "symptoms": "Difficulty swallowing, drooling, foul breath, swelling of throat/jaw, labored breathing, fever.",
+    "treatment": "Antibiotics prescribed by a vet, anti-inflammatory support, sometimes cleaning of affected tissue.",
+    "prevention": "Clean feeding equipment and bedding, avoid rough feed that can injure the mouth, good calf hygiene.",
+    "contagious": true,
+    "severity": "moderate"
+  },
+  "foot_rot": {
+    "display_name": "Foot Rot",
+    "cause": "Bacterial infection (Fusobacterium necrophorum with Dichelobacter nodosus) entering through skin damage between the claws, often in wet/muddy conditions.",
+    "symptoms": "Sudden lameness, swelling and heat between the claws, foul odor, fever.",
+    "treatment": "Antibiotics, cleaning and disinfecting the foot, keeping the animal on dry ground during recovery.",
+    "prevention": "Footbaths, keeping pens dry, prompt treatment of minor foot injuries, trimming hooves regularly.",
+    "contagious": true,
+    "severity": "moderate"
+  },
+  "foot_and_mouth": {
+    "display_name": "Foot and Mouth Disease (FMD)",
+    "cause": "Highly contagious viral disease affecting cloven-hoofed animals, notifiable to authorities.",
+    "symptoms": "Fever, blisters on mouth/tongue/feet, excessive drooling, lameness, reduced milk yield, reluctance to eat.",
+    "treatment": "No specific cure; supportive care only. Outbreaks require immediate reporting, quarantine, and often culling per national animal-health regulations.",
+    "prevention": "Vaccination where permitted, strict biosecurity, movement restrictions, disinfection of equipment and vehicles.",
+    "contagious": true,
+    "severity": "high"
+  },
+  "ragwort_poisoning": {
+    "display_name": "Ragwort Poisoning",
+    "cause": "Ingestion of ragwort plant (fresh or dried in hay), which contains liver-toxic pyrrolizidine alkaloids.",
+    "symptoms": "Weight loss, jaundice, photosensitization, abnormal behavior, liver failure signs over time (often cumulative/chronic).",
+    "treatment": "No antidote; remove source of ragwort, supportive care for liver damage, prognosis often poor once symptomatic.",
+    "prevention": "Remove ragwort from pastures and hay fields before flowering, check hay sources for contamination.",
+    "contagious": false,
+    "severity": "high"
+  },
+  "wooden_tongue": {
+    "display_name": "Wooden Tongue (Actinobacillosis)",
+    "cause": "Bacterial infection (Actinobacillus lignieresii) of the tongue and soft tissue, entering through oral injury.",
+    "symptoms": "Swollen, firm, painful tongue; drooling; difficulty eating and swallowing; weight loss.",
+    "treatment": "Antibiotics and/or iodine therapy as prescribed by a vet, softened feed during recovery.",
+    "prevention": "Avoid coarse/sharp feed that injures the mouth, good pasture management.",
+    "contagious": false,
+    "severity": "moderate"
+  },
+  "infectious_bovine_rhinotracheitis": {
+    "display_name": "Infectious Bovine Rhinotracheitis (IBR)",
+    "cause": "Viral infection (Bovine Herpesvirus-1) affecting the respiratory and sometimes reproductive tract.",
+    "symptoms": "Fever, nasal discharge, coughing, conjunctivitis, reduced appetite, abortion in pregnant cows.",
+    "treatment": "Supportive care (anti-inflammatories, fluids); antibiotics if secondary bacterial infection develops.",
+    "prevention": "Vaccination, quarantine of new animals, good ventilation and reduced stocking density.",
+    "contagious": true,
+    "severity": "moderate-high"
+  },
+  "acetonaemia": {
+    "display_name": "Acetonaemia (Ketosis)",
+    "cause": "Negative energy balance in early lactation, causing excess ketone body production.",
+    "symptoms": "Reduced appetite (especially for concentrates), drop in milk yield, weight loss, sweet/acetone breath odor, dullness.",
+    "treatment": "Glucose or propylene glycol drenches, corticosteroids as prescribed, improved energy intake.",
+    "prevention": "Careful transition-period feeding, avoiding excess body condition at calving, monitoring energy balance.",
+    "contagious": false,
+    "severity": "moderate"
+  },
+  "fatty_liver_syndrome": {
+    "display_name": "Fatty Liver Syndrome",
+    "cause": "Excess fat mobilization to the liver during severe negative energy balance, usually around calving.",
+    "symptoms": "Reduced appetite, weight loss, lethargy, poor response to treatment of other transition diseases, reduced fertility.",
+    "treatment": "Supportive nutritional therapy, glucose precursors, addressing underlying energy deficit; often managed alongside ketosis treatment.",
+    "prevention": "Avoiding over-conditioning before calving, balanced transition-period diet, monitoring body condition score.",
+    "contagious": false,
+    "severity": "moderate-high"
+  },
+  "calf_pneumonia": {
+    "display_name": "Calf Pneumonia (Bovine Respiratory Disease)",
+    "cause": "Viral and/or bacterial respiratory infection, often worsened by poor ventilation, stress, or crowding.",
+    "symptoms": "Coughing, nasal discharge, rapid or labored breathing, fever, reduced appetite, lethargy.",
+    "treatment": "Antibiotics for bacterial component, anti-inflammatories, supportive care and good housing conditions.",
+    "prevention": "Good ventilation, reduced stocking density, vaccination programs, minimizing stress at weaning/transport.",
+    "contagious": true,
+    "severity": "moderate-high"
+  },
+  "schmallen_berg_virus": {
+    "display_name": "Schmallenberg Virus",
+    "cause": "Viral infection transmitted by midges, mainly affecting pregnant cattle and their calves.",
+    "symptoms": "Mild fever, diarrhea, drop in milk yield in adults; birth defects or stillbirth in calves if infection occurs during pregnancy.",
+    "treatment": "No specific treatment; supportive care for affected animals.",
+    "prevention": "Midge control measures, vaccination where available, monitoring during vector season.",
+    "contagious": true,
+    "severity": "moderate"
+  },
+  "trypanosomosis": {
+    "display_name": "Trypanosomosis",
+    "cause": "Parasitic infection with Trypanosoma species, transmitted by tsetse flies or other biting insects.",
+    "symptoms": "Fever, anemia, weight loss, lethargy, swollen lymph nodes, reduced fertility and productivity.",
+    "treatment": "Trypanocidal drugs prescribed by a vet, supportive care for anemia.",
+    "prevention": "Vector (fly) control, use of trypanotolerant breeds where available, prophylactic drug programs in high-risk areas.",
+    "contagious": false,
+    "severity": "moderate-high"
+  },
+  "fog_fever": {
+    "display_name": "Fog Fever (Acute Bovine Pulmonary Edema and Emphysema)",
+    "cause": "Sudden respiratory reaction after moving cattle to lush autumn pasture ('fog'), linked to a toxic metabolite from the amino acid tryptophan.",
+    "symptoms": "Sudden onset labored breathing, grunting, foamy discharge from mouth/nose, reluctance to move.",
+    "treatment": "Move animals off the pasture immediately, anti-inflammatories and supportive respiratory care from a vet.",
+    "prevention": "Gradual transition when moving cattle onto lush autumn pasture, avoiding overgrazing followed by fast regrowth pasture moves.",
+    "contagious": false,
+    "severity": "high"
+  }
+}
