@@ -37,7 +37,11 @@ DISEASE_INFO = {
 # load_models() below, so they reflect the actual current dataset instead
 # of a stale, hand-typed number.
 
-VET_CSV = "data/tn_veterinary_hospitals.csv"
+VET_CSV = os.path.join(
+    BASE_DIR,
+    "data",
+    "tn_veterinary_hospitals.csv"
+)
 vet_df = pd.read_csv(VET_CSV).fillna("")
 
 app = FastAPI(title="CowWell Cattle Disease API", version="1.0.0")
