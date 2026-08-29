@@ -346,7 +346,7 @@ def predict(req: PredictRequest):
 
 
 @app.get("/nearby-vets")
-def nearby_vets(lat: float, lon: float, radius: int = 5000):
+def nearby_vets(lat: float, lon: float, radius: int = 25000):
     csv_results = []
 
     for _, row in vet_df.iterrows():
@@ -364,59 +364,24 @@ def nearby_vets(lat: float, lon: float, radius: int = 5000):
         if distance * 1000 <= radius:
 
             csv_results.append({
-                "name": row["name"],
-                "address": row["address"],
-                "phone": row["phone"],
+                "name": str(row["name"]),
+                "address": str(row["address"]),
+                "phone": str(row["phone"]) if not pd.isna(row["phone"]) else "",
                 "lat": float(row["latitude"]),
                 "lon": float(row["longitude"]),
                 "distance_km": round(distance, 2),
                 "source": "Tamil Nadu Veterinary Dataset",
             })
-    osm_results = search_overpass_vets(
-        lat,
-        lon,
-        radius,
-    )
-    for vet in osm_results:
 
-        vet["distance_km"] = round(
-            distance_km(
-                lat,
-                lon,
-                vet["lat"],
-                vet["lon"],
-            ),
-            2,
-        )
-    combined = csv_results + osm_results
-    unique = []
-
-    for vet in combined:
-
-        duplicate = False
-
-        for existing in unique:
-
-            distance = distance_km(
-                vet["lat"],
-                vet["lon"],
-                existing["lat"],
-                existing["lon"],
-            )
-
-            if distance < 0.1:
-                duplicate = True
-                break
-
-        if not duplicate:
-            unique.append(vet)
-    unique.sort(
+    # Sort nearest first
+    csv_results.sort(
         key=lambda x: x["distance_km"]
     )
+
     return {
         "lat": lat,
         "lon": lon,
         "radius_m": radius,
-        "count": len(unique),
-        "facilities": unique[:20],
+        "count": len(csv_results),
+        "facilities": csv_results[:20],
     }
