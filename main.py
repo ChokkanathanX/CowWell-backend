@@ -20,7 +20,7 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from pathlib import Path
-from PIL import Image
+from PIL import Image,ImageOps
 import io
 
 from fastapi import UploadFile, File
@@ -409,11 +409,15 @@ async def predict_image(file: UploadFile = File(...)):
 
         image = Image.open(io.BytesIO(contents)).convert("RGB")
 
-        image = image.resize((224, 224))
+        image = ImageOps.fit(
+            image,
+            (224, 224),
+            Image.Resampling.LANCZOS,
+        )
 
-        image_array = np.array(image, dtype=np.float32)
+        image_array = np.asarray(image).astype(np.float32)
 
-        image_array = image_array / 255.0
+        image_array = (image_array / 127.5) - 1
 
         image_array = np.expand_dims(image_array, axis=0)
 
