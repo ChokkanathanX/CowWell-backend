@@ -1,7 +1,8 @@
 from __future__ import annotations
-
 import json
 import os
+os.environ["TF_USE_LEGACY_KERAS"] = "1"
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 from functools import lru_cache
 from typing import Any
 import math
@@ -22,16 +23,15 @@ from sklearn.tree import DecisionTreeClassifier
 from pathlib import Path
 from PIL import Image,ImageOps
 import io
-
 from fastapi import UploadFile, File
-
 import tensorflow as tf
+import tf_keras as keras
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 VITALS = ["Temperature_C", "Pulse_Rate_bpm", "Weight_Change_Pct"]
 MODEL_PATH = Path(__file__).parent / "models" / "keras_model.h5"
 
-image_model = tf.keras.models.load_model(MODEL_PATH)
+image_model = keras.models.load_model(MODEL_PATH)
 
 IMAGE_CLASSES = [
     "Healthy",
