@@ -19,10 +19,26 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
+from pathlib import Path
+from PIL import Image
+import io
+
+from fastapi import UploadFile, File
+
+import tensorflow as tf
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 VITALS = ["Temperature_C", "Pulse_Rate_bpm", "Weight_Change_Pct"]
+MODEL_PATH = Path(__file__).parent / "models" / "cattle_disease.h5"
 
+image_model = tf.keras.models.load_model(MODEL_PATH)
+
+IMAGE_CLASSES = [
+    "Healthy",
+    "LSD",
+    "FMD",
+]
+IMG_SIZE = (224, 224)
 DATASETS = {
     "en": os.path.join(BASE_DIR, "Training_english.csv"),
     "ta": os.path.join(BASE_DIR, "Training_tamil.csv"),
@@ -385,3 +401,38 @@ def nearby_vets(lat: float, lon: float, radius: int = 25000):
         "count": len(csv_results),
         "facilities": csv_results[:20],
     }
+@app.post("/predict-image")
+async def predict_image(file: UploadFile = File(...)):
+
+    try:
+        contents = await file.read()
+
+        image = Image.open(io.BytesIO(contents)).convert("RGB")
+
+        image = image.resize((224, 224))
+
+        image_array = np.array(image, dtype=np.float32)
+
+        image_array = image_array / 255.0
+
+        image_array = np.expand_dims(image_array, axis=0)
+
+        prediction = image_model.predict(
+            image_array,
+            verbose=0,
+        )[0]
+
+        class_index = int(np.argmax(prediction))
+
+        confidence = float(prediction[class_index])
+
+        return {
+            "prediction": IMAGE_CLASSES[class_index],
+            "confidence": round(confidence, 4),
+        }
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Image prediction failed: {str(e)}",
+        )
