@@ -13,8 +13,8 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score
-from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score,make_scorer, f1_score
+from sklearn.model_selection import train_test_split,StratifiedKFold, cross_val_score
 from sklearn.naive_bayes import GaussianNB
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import LabelEncoder, StandardScaler
@@ -170,45 +170,96 @@ def distance_km(lat1, lon1, lat2, lon2):
 
 
 def _train_and_evaluate(lang: str):
-    """Train all models on a fresh split and compute real accuracy scores.
+    """Train models using 5-Fold Stratified CV with Macro F1."""
 
-    This is the single source of truth for model accuracy: nothing here is
-    hand-typed. Every value comes straight out of accuracy_score() against
-    a held-out test split of whatever CSV currently sits at DATASETS[lang].
-    """
     if lang not in DATASETS:
         raise ValueError("Unsupported language")
 
     df = pd.read_csv(DATASETS[lang])
+
     if "prognosis" not in df.columns:
         raise ValueError("Dataset has no prognosis column")
 
+    # Remove exact duplicate samples
+    df = df.drop_duplicates().reset_index(drop=True)
+
     X = df.drop(columns=["prognosis"])
     y = df["prognosis"]
+
     le = LabelEncoder()
     y_enc = le.fit_transform(y)
 
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y_enc, test_size=0.20, random_state=42, stratify=y_enc
-    )
-
     definitions = {
-        "Random Forest": RandomForestClassifier(random_state=42, n_jobs=-1),
-        "Decision Tree": DecisionTreeClassifier(random_state=42),
+        "Random Forest": RandomForestClassifier(
+            random_state=42,
+            n_jobs=-1
+        ),
+
+        "Decision Tree": DecisionTreeClassifier(
+            random_state=42
+        ),
+
         "Naive Bayes": GaussianNB(),
-        "SVM": make_pipeline(StandardScaler(), SVC(probability=True, random_state=42)),
+
+        "SVM": make_pipeline(
+            StandardScaler(),
+            SVC(
+                probability=True,
+                random_state=42
+            )
+        ),
     }
 
     models = {}
     accuracies = {}
+
+    # Macro F1 used internally for honest evaluation
+    f1_scorer = make_scorer(
+        f1_score,
+        average="macro"
+    )
+
+    cv = StratifiedKFold(
+        n_splits=5,
+        shuffle=True,
+        random_state=42
+    )
+
     for name, clf in definitions.items():
-        clf.fit(X_train, y_train)
-        accuracies[name] = round(float(accuracy_score(y_test, clf.predict(X_test)) * 100), 2)
+
+        # 5-Fold Cross-Validation
+        scores = cross_val_score(
+            clf,
+            X,
+            y_enc,
+            cv=cv,
+            scoring=f1_scorer
+        )
+
+        # Mean Macro F1, presented to frontend as percentage
+        mean_f1 = scores.mean()
+
+        accuracies[name] = round(
+            float(mean_f1 * 100),
+            2
+        )
+
+        # Train final production model
+        clf.fit(X, y_enc)
         models[name] = clf
 
-    symptoms = [c for c in X.columns if c not in VITALS]
-    return models, accuracies, le, symptoms, list(X.columns)
+    symptoms = [
+        c for c in X.columns
+        if c not in VITALS
+    ]
 
+    return (
+        models,
+        accuracies,
+        le,
+        symptoms,
+        list(X.columns)
+    )
 
 @lru_cache(maxsize=2)
 def _load_models_cached(lang: str):
