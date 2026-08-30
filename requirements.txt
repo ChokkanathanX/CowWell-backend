@@ -7,4 +7,3 @@ pydantic==2.12.5
 scikit-learn==1.9.0
 python-multipart
 tensorflow==2.16.1
-tf-keras==2.20.1
