@@ -37,6 +37,7 @@ IMAGE_CLASSES = [
     "Healthy",
     "LSD",
     "FMD",
+    "NOT A COW",
 ]
 IMG_SIZE = (224, 224)
 DATASETS = {
@@ -427,11 +428,28 @@ async def predict_image(file: UploadFile = File(...)):
         )[0]
 
         class_index = int(np.argmax(prediction))
-
         confidence = float(prediction[class_index])
 
+        prediction_name = IMAGE_CLASSES[class_index]
+
+        # Reject uncertain predictions
+        if confidence < 0.70:
+            return {
+                "prediction": "Uncertain",
+                "confidence": round(confidence, 4),
+                "message": "Please provide a clear image of a cow."
+            }
+
+        # Reject images classified as Not a Cow
+        if prediction_name == "NOT A COW":
+            return {
+                "prediction": "Invalid Image",
+                "confidence": round(confidence, 4),
+                "message": "Please upload an image of a cow."
+            }
+
         return {
-            "prediction": IMAGE_CLASSES[class_index],
+            "prediction": prediction_name,
             "confidence": round(confidence, 4),
         }
 
