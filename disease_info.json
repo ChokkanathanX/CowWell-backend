@@ -1,6 +1,7 @@
 {
   "mastitis": {
     "display_name": "Mastitis",
+    "description": "Mastitis is inflammation of the mammary gland (udder) tissue, most often triggered by a bacterial infection. It is one of the most common and economically significant diseases in dairy cattle, directly affecting milk quality and yield.",
     "cause": "Bacterial infection of the udder (commonly Staphylococcus, Streptococcus, or E. coli), usually entering through the teat canal.",
     "symptoms": "Swollen, hot, painful udder; clots or watery/discolored milk; reduced milk yield; fever in severe cases.",
     "treatment": "Intramammary or systemic antibiotics as prescribed by a vet, frequent milking-out of the affected quarter, anti-inflammatories for pain.",
@@ -10,6 +11,7 @@
   },
   "blackleg": {
     "display_name": "Blackleg",
+    "description": "Blackleg is an acute, usually fatal bacterial disease caused by soil-borne Clostridium spores that germinate in damaged muscle tissue, producing toxins that destroy muscle. It mainly strikes young, fast-growing cattle on pasture.",
     "cause": "Infection with Clostridium chauvoei spores, often activated after bruising or muscle injury.",
     "symptoms": "Sudden severe lameness, hot painful swelling in muscle (later cold and gas-filled/crackling), high fever, depression, rapid death.",
     "treatment": "High-dose antibiotics (e.g. penicillin) if caught extremely early, but progression is often fast and fatal; supportive care from a vet.",
@@ -19,6 +21,7 @@
   },
   "bloat": {
     "display_name": "Bloat",
+    "description": "Bloat is the abnormal accumulation of gas in the rumen (the first stomach chamber) that cannot be released normally, causing the abdomen to swell. It can develop very quickly and become life-threatening if the gas isn't relieved.",
     "cause": "Excess gas trapped in the rumen, either frothy (from legume-rich pasture) or free-gas (from obstruction).",
     "symptoms": "Distended left side of abdomen, visible discomfort, rapid breathing, kicking at belly, collapse in severe cases.",
     "treatment": "Emergency gas relief via stomach tube or trocar, anti-foaming agents (e.g. poloxalene) for frothy bloat; veterinary emergency if severe.",
@@ -28,6 +31,7 @@
   },
   "coccidiosis": {
     "display_name": "Coccidiosis",
+    "description": "Coccidiosis is a parasitic disease of the intestines caused by microscopic Eimeria protozoa. It mainly affects young, stressed, or crowded calves and spreads easily through contaminated feed, water, or bedding.",
     "cause": "Intestinal infection with Eimeria protozoan parasites, spread through contaminated feed, water, or bedding.",
     "symptoms": "Watery to bloody diarrhea, straining, dehydration, weight loss, poor growth, especially in young calves.",
     "treatment": "Anticoccidial drugs (e.g. amprolium or sulfa drugs), fluid and electrolyte support for dehydration.",
@@ -37,6 +41,7 @@
   },
   "cryptosporidiosis": {
     "display_name": "Cryptosporidiosis",
+    "description": "Cryptosporidiosis is a parasitic diarrheal disease caused by the protozoan Cryptosporidium parvum. It is one of the leading causes of scours (diarrhea) in very young calves and can also spread to humans.",
     "cause": "Infection with Cryptosporidium parvum protozoan parasite, typically affecting young calves via contaminated environment.",
     "symptoms": "Profuse watery diarrhea, dehydration, weight loss, lethargy in calves usually under 3 weeks old.",
     "treatment": "Supportive fluid/electrolyte therapy; no fully curative drug, halofuginone may reduce severity if used early.",
@@ -46,6 +51,7 @@
   },
   "displaced_abomasum": {
     "display_name": "Displaced Abomasum",
+    "description": "A displaced abomasum occurs when the true (fourth) stomach fills with gas and floats out of its normal position, most often to the left side of the abdomen. It typically develops in high-producing dairy cows shortly after calving.",
     "cause": "The abomasum (true stomach) fills with gas and shifts out of position, usually left side, common after calving.",
     "symptoms": "Reduced appetite, drop in milk production, mild colic, ketotic breath odor, a characteristic 'ping' sound on abdomen when tapped.",
     "treatment": "Surgical correction (most common) or non-surgical rolling/repositioning by a vet, followed by dietary management.",
@@ -55,6 +61,7 @@
   },
   "gut_worms": {
     "display_name": "Gut Worms (Gastrointestinal Parasites)",
+    "description": "Gut worms refer to a group of internal parasitic roundworms that live in the stomach and intestines of cattle, absorbing nutrients and damaging the gut lining. Animals pick them up by grazing contaminated pasture.",
     "cause": "Internal parasitic worms (e.g. Ostertagia, Cooperia) picked up from contaminated pasture.",
     "symptoms": "Weight loss, diarrhea, poor coat condition, reduced growth or milk yield, sometimes bottle jaw (swelling under jaw).",
     "treatment": "Anthelmintic (deworming) drugs as advised by a vet, targeted to the specific worm burden.",
@@ -64,6 +71,7 @@
   },
   "listeriosis": {
     "display_name": "Listeriosis",
+    "description": "Listeriosis is a bacterial infection that can affect the brain and nervous system of cattle, most commonly linked to feeding spoiled or poorly fermented silage. It can also cause abortion in pregnant animals.",
     "cause": "Infection with Listeria monocytogenes bacteria, often from spoiled silage.",
     "symptoms": "Circling, head tilt, facial nerve paralysis (drooping ear/lip), loss of balance, fever, possible abortion in pregnant cows.",
     "treatment": "High-dose antibiotics (e.g. penicillin) early in disease course, supportive nursing care and fluids.",
@@ -73,6 +81,7 @@
   },
   "liver_fluke": {
     "display_name": "Liver Fluke",
+    "description": "Liver fluke disease is a parasitic infestation of the liver caused by a flatworm (Fasciola hepatica) that uses freshwater snails as an intermediate host. It is common in cattle grazing wet, marshy pastures.",
     "cause": "Infestation with Fasciola hepatica parasite, transmitted via snails in wet pasture areas.",
     "symptoms": "Weight loss, anemia (pale gums), bottle jaw, reduced milk yield, chronic ill-thrift; acute form can cause sudden death.",
     "treatment": "Flukicide drugs (e.g. triclabendazole) prescribed by a vet, timed to the fluke life cycle.",
@@ -82,6 +91,7 @@
   },
   "necrotic_enteritis": {
     "display_name": "Necrotic Enteritis",
+    "description": "Necrotic enteritis is a severe, rapidly progressing inflammation and death of intestinal tissue caused by an overgrowth of Clostridium bacteria. It often strikes suddenly and can be fatal within hours.",
     "cause": "Overgrowth of Clostridium perfringens bacteria in the intestine, often triggered by diet change or intestinal damage.",
     "symptoms": "Sudden severe diarrhea (sometimes bloody), abdominal pain, depression, rapid dehydration, can progress quickly to death.",
     "treatment": "Emergency veterinary care with antibiotics, fluid therapy, and anti-inflammatory support.",
@@ -91,6 +101,7 @@
   },
   "peri_weaning_diarrhoea": {
     "display_name": "Peri-Weaning Diarrhoea",
+    "description": "Peri-weaning diarrhoea is a digestive upset that occurs around the time young animals are weaned off milk, usually caused by a combination of dietary change and stress along with infectious agents.",
     "cause": "Multifactorial gut upset (dietary transition, viral/bacterial/parasitic triggers) occurring around the weaning period.",
     "symptoms": "Diarrhea, reduced appetite, weight loss or poor growth around the time of weaning.",
     "treatment": "Fluid and electrolyte support, identify and treat underlying infectious cause if present, dietary adjustment.",
@@ -100,6 +111,7 @@
   },
   "rift_valley_fever": {
     "display_name": "Rift Valley Fever",
+    "description": "Rift Valley Fever is a mosquito-borne viral disease that affects cattle and other livestock, causing high abortion and death rates. It is a notifiable, zoonotic disease, meaning it can also infect people.",
     "cause": "Viral disease (Phlebovirus) spread by mosquitoes, notifiable and zoonotic (can infect humans).",
     "symptoms": "Fever, weakness, high abortion rates in pregnant animals, high mortality in young calves, sudden death.",
     "treatment": "No specific antiviral treatment; supportive care only. This is a notifiable disease — report to veterinary authorities immediately.",
@@ -109,6 +121,7 @@
   },
   "rumen_acidosis": {
     "display_name": "Rumen Acidosis",
+    "description": "Rumen acidosis is a digestive disorder caused by excessive intake of rapidly fermentable carbohydrates (such as grain), which sharply lowers the rumen's pH and disrupts normal digestion.",
     "cause": "Excess rapidly fermentable carbohydrate (grain) intake causing rumen pH to drop sharply.",
     "symptoms": "Reduced appetite, diarrhea, dullness, teeth grinding, in severe cases staggering and collapse.",
     "treatment": "Rumen buffers (e.g. sodium bicarbonate), fluid therapy, in severe cases rumen lavage by a vet.",
@@ -118,6 +131,7 @@
   },
   "traumatic_reticulitis": {
     "display_name": "Traumatic Reticulitis (Hardware Disease)",
+    "description": "Traumatic reticulitis, commonly called hardware disease, occurs when cattle accidentally swallow sharp metal objects that lodge in and puncture the wall of the reticulum (second stomach compartment).",
     "cause": "Ingestion of sharp metal objects (wire, nails) that penetrate the reticulum wall.",
     "symptoms": "Reluctance to move, arched back, grunting, reduced appetite, drop in milk yield, pain on pressure over the chest/abdomen.",
     "treatment": "Magnet administration to trap metal, antibiotics for infection, surgical removal in severe cases.",
@@ -127,6 +141,7 @@
   },
   "calf_diphtheria": {
     "display_name": "Calf Diphtheria",
+    "description": "Calf diphtheria is a bacterial infection of the mouth and throat in young calves, usually starting from a small wound in the oral tissue that becomes infected, leading to painful swelling and difficulty eating.",
     "cause": "Bacterial infection (Fusobacterium necrophorum) of the mouth/throat, often via injury to oral tissue.",
     "symptoms": "Difficulty swallowing, drooling, foul breath, swelling of throat/jaw, labored breathing, fever.",
     "treatment": "Antibiotics prescribed by a vet, anti-inflammatory support, sometimes cleaning of affected tissue.",
@@ -136,6 +151,7 @@
   },
   "foot_rot": {
     "display_name": "Foot Rot",
+    "description": "Foot rot is a bacterial infection of the skin between the claws of the hoof, usually entering through cuts or softened skin caused by wet, muddy conditions. It causes sudden, painful lameness.",
     "cause": "Bacterial infection (Fusobacterium necrophorum with Dichelobacter nodosus) entering through skin damage between the claws, often in wet/muddy conditions.",
     "symptoms": "Sudden lameness, swelling and heat between the claws, foul odor, fever.",
     "treatment": "Antibiotics, cleaning and disinfecting the foot, keeping the animal on dry ground during recovery.",
@@ -145,6 +161,7 @@
   },
   "foot_and_mouth": {
     "display_name": "Foot and Mouth Disease (FMD)",
+    "description": "Foot and Mouth Disease (FMD) is a highly contagious viral disease affecting cattle and other cloven-hoofed animals, causing painful blisters in the mouth and on the feet. It is a serious, notifiable disease with major economic impact.",
     "cause": "Highly contagious viral disease affecting cloven-hoofed animals, notifiable to authorities.",
     "symptoms": "Fever, blisters on mouth/tongue/feet, excessive drooling, lameness, reduced milk yield, reluctance to eat.",
     "treatment": "No specific cure; supportive care only. Outbreaks require immediate reporting, quarantine, and often culling per national animal-health regulations.",
@@ -154,6 +171,7 @@
   },
   "ragwort_poisoning": {
     "display_name": "Ragwort Poisoning",
+    "description": "Ragwort poisoning is liver damage caused by cattle eating the ragwort plant, which contains toxic compounds that build up in the liver over time, often not showing symptoms until the damage is severe.",
     "cause": "Ingestion of ragwort plant (fresh or dried in hay), which contains liver-toxic pyrrolizidine alkaloids.",
     "symptoms": "Weight loss, jaundice, photosensitization, abnormal behavior, liver failure signs over time (often cumulative/chronic).",
     "treatment": "No antidote; remove source of ragwort, supportive care for liver damage, prognosis often poor once symptomatic.",
@@ -163,6 +181,7 @@
   },
   "wooden_tongue": {
     "display_name": "Wooden Tongue (Actinobacillosis)",
+    "description": "Wooden tongue (actinobacillosis) is a bacterial infection of the tongue that causes it to become hard, swollen, and painful, making it difficult for the animal to eat, drink, or chew normally.",
     "cause": "Bacterial infection (Actinobacillus lignieresii) of the tongue and soft tissue, entering through oral injury.",
     "symptoms": "Swollen, firm, painful tongue; drooling; difficulty eating and swallowing; weight loss.",
     "treatment": "Antibiotics and/or iodine therapy as prescribed by a vet, softened feed during recovery.",
@@ -172,6 +191,7 @@
   },
   "infectious_bovine_rhinotracheitis": {
     "display_name": "Infectious Bovine Rhinotracheitis (IBR)",
+    "description": "Infectious Bovine Rhinotracheitis (IBR) is a viral disease that primarily affects the respiratory tract of cattle, causing fever and nasal/eye discharge, and can also affect the reproductive tract and cause abortion.",
     "cause": "Viral infection (Bovine Herpesvirus-1) affecting the respiratory and sometimes reproductive tract.",
     "symptoms": "Fever, nasal discharge, coughing, conjunctivitis, reduced appetite, abortion in pregnant cows.",
     "treatment": "Supportive care (anti-inflammatories, fluids); antibiotics if secondary bacterial infection develops.",
@@ -181,6 +201,7 @@
   },
   "acetonaemia": {
     "display_name": "Acetonaemia (Ketosis)",
+    "description": "Acetonaemia, also known as ketosis, is a metabolic disease that occurs when a cow's energy demands (especially in early lactation) exceed what she can eat, forcing her body to break down fat and produce excess ketones.",
     "cause": "Negative energy balance in early lactation, causing excess ketone body production.",
     "symptoms": "Reduced appetite (especially for concentrates), drop in milk yield, weight loss, sweet/acetone breath odor, dullness.",
     "treatment": "Glucose or propylene glycol drenches, corticosteroids as prescribed, improved energy intake.",
@@ -190,6 +211,7 @@
   },
   "fatty_liver_syndrome": {
     "display_name": "Fatty Liver Syndrome",
+    "description": "Fatty liver syndrome is a metabolic disorder in which excessive body fat is mobilized to the liver during a period of severe energy deficit, impairing liver function. It commonly occurs around calving.",
     "cause": "Excess fat mobilization to the liver during severe negative energy balance, usually around calving.",
     "symptoms": "Reduced appetite, weight loss, lethargy, poor response to treatment of other transition diseases, reduced fertility.",
     "treatment": "Supportive nutritional therapy, glucose precursors, addressing underlying energy deficit; often managed alongside ketosis treatment.",
@@ -199,6 +221,7 @@
   },
   "calf_pneumonia": {
     "display_name": "Calf Pneumonia (Bovine Respiratory Disease)",
+    "description": "Calf pneumonia, also called Bovine Respiratory Disease, is an infection of the lungs and airways in calves caused by viruses and/or bacteria, often worsened by poor housing, stress, or overcrowding.",
     "cause": "Viral and/or bacterial respiratory infection, often worsened by poor ventilation, stress, or crowding.",
     "symptoms": "Coughing, nasal discharge, rapid or labored breathing, fever, reduced appetite, lethargy.",
     "treatment": "Antibiotics for bacterial component, anti-inflammatories, supportive care and good housing conditions.",
@@ -208,6 +231,7 @@
   },
   "schmallen_berg_virus": {
     "display_name": "Schmallenberg Virus",
+    "description": "Schmallenberg virus is an insect-borne viral disease of cattle that causes mild illness in adults but can lead to serious birth defects or stillbirth in calves if the mother is infected during pregnancy.",
     "cause": "Viral infection transmitted by midges, mainly affecting pregnant cattle and their calves.",
     "symptoms": "Mild fever, diarrhea, drop in milk yield in adults; birth defects or stillbirth in calves if infection occurs during pregnancy.",
     "treatment": "No specific treatment; supportive care for affected animals.",
@@ -217,6 +241,7 @@
   },
   "trypanosomosis": {
     "display_name": "Trypanosomosis",
+    "description": "Trypanosomosis is a parasitic blood disease caused by Trypanosoma organisms transmitted by biting flies such as tsetse flies. It causes chronic anemia, weight loss, and reduced productivity in cattle.",
     "cause": "Parasitic infection with Trypanosoma species, transmitted by tsetse flies or other biting insects.",
     "symptoms": "Fever, anemia, weight loss, lethargy, swollen lymph nodes, reduced fertility and productivity.",
     "treatment": "Trypanocidal drugs prescribed by a vet, supportive care for anemia.",
@@ -226,6 +251,7 @@
   },
   "fog_fever": {
     "display_name": "Fog Fever (Acute Bovine Pulmonary Edema and Emphysema)",
+    "description": "Fog fever is a sudden and severe lung condition in adult cattle triggered by moving them onto lush, fast-growing autumn pasture, where a toxic compound formed in the rumen damages the lungs.",
     "cause": "Sudden respiratory reaction after moving cattle to lush autumn pasture ('fog'), linked to a toxic metabolite from the amino acid tryptophan.",
     "symptoms": "Sudden onset labored breathing, grunting, foamy discharge from mouth/nose, reluctance to move.",
     "treatment": "Move animals off the pasture immediately, anti-inflammatories and supportive respiratory care from a vet.",
