@@ -29,7 +29,7 @@ import tensorflow as tf
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 VITALS = ["Temperature_C", "Pulse_Rate_bpm", "Weight_Change_Pct"]
-MODEL_PATH = Path(__file__).parent / "models" / "cattle_disease.h5"
+MODEL_PATH = Path(__file__).parent / "models" / "keras_model.h5"
 
 image_model = tf.keras.models.load_model(MODEL_PATH)
 
