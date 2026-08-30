@@ -170,7 +170,7 @@ def distance_km(lat1, lon1, lat2, lon2):
 
 
 def _train_and_evaluate(lang: str):
-    """Train models using 5-Fold Stratified CV with Macro F1."""
+    """Train models on 80% and evaluate final performance on 20%."""
 
     if lang not in DATASETS:
         raise ValueError("Unsupported language")
@@ -180,7 +180,7 @@ def _train_and_evaluate(lang: str):
     if "prognosis" not in df.columns:
         raise ValueError("Dataset has no prognosis column")
 
-    # Remove exact duplicate samples
+    # Remove exact duplicates
     df = df.drop_duplicates().reset_index(drop=True)
 
     X = df.drop(columns=["prognosis"])
@@ -188,6 +188,18 @@ def _train_and_evaluate(lang: str):
 
     le = LabelEncoder()
     y_enc = le.fit_transform(y)
+
+    # ==========================================
+    # 80% TRAIN / 20% TEST
+    # ==========================================
+
+    X_train, X_test, y_train, y_test = train_test_split(
+        X,
+        y_enc,
+        test_size=0.20,
+        stratify=y_enc,
+        random_state=42
+    )
 
     definitions = {
         "Random Forest": RandomForestClassifier(
@@ -213,39 +225,32 @@ def _train_and_evaluate(lang: str):
     models = {}
     accuracies = {}
 
-    # Macro F1 used internally for honest evaluation
-    f1_scorer = make_scorer(
-        f1_score,
-        average="macro"
-    )
-
-    cv = StratifiedKFold(
-        n_splits=5,
-        shuffle=True,
-        random_state=42
-    )
+    # ==========================================
+    # TRAIN → TEST → MACRO F1
+    # ==========================================
 
     for name, clf in definitions.items():
 
-        # 5-Fold Cross-Validation
-        scores = cross_val_score(
-            clf,
-            X,
-            y_enc,
-            cv=cv,
-            scoring=f1_scorer
+        # Train ONLY on 80%
+        clf.fit(X_train, y_train)
+
+        # Test ONLY on unseen 20%
+        predictions = clf.predict(X_test)
+
+        # Macro F1 used as our evaluation metric
+        score = f1_score(
+            y_test,
+            predictions,
+            average="macro"
         )
 
-        # Mean Macro F1, presented to frontend as percentage
-        mean_f1 = scores.mean()
-
+        # Keep the SAME format as before
+        # so Flutter continues working
         accuracies[name] = round(
-            float(mean_f1 * 100),
+            float(score * 100),
             2
         )
 
-        # Train final production model
-        clf.fit(X, y_enc)
         models[name] = clf
 
     symptoms = [
